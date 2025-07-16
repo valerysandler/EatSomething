@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { Menu } from "../models/menu.model";
+import { Menu } from "../interfaces/product.model";
 import { getMenu, createMenuItem, updateMenuItem as updateMenuItemService } from "../services/menu.service";
 
 // Get all menu items

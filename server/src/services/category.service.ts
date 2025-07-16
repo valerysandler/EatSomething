@@ -1,5 +1,5 @@
 // Category service 
-import { Category } from '../models/categoty.model';
+import { Category } from '../interfaces/categoty.model';
 import { Pool } from 'pg';
 
 // PostgreSQL connection pool

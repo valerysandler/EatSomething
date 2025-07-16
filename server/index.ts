@@ -4,10 +4,11 @@ dotenv.config(); // для загрузки переменных окружен�
 import { connectToDatabase } from './src/config/db';
 import express from 'express';
 import cors from 'cors';
-import categoryRouter from './src/routes/category';
-import userRouter from './src/routes/user';
-import menuRouter from './src/routes/menu'; 
-import menuCategoryRouter from './src/routes/menuCategory';
+import categoryRouter from './src/routes/category.route';
+import userRouter from './src/routes/user.route';
+import menuRouter from './src/routes/menu.route'; 
+import menuCategoryRouter from './src/routes/menuCategory.route';
+import orderRouter from './src/routes/order.route';
 
 // Connect to PostgreSQL database
 connectToDatabase();
@@ -26,6 +27,9 @@ server.get('/', (req, res) => {
     res.send('Welcome to the Cafe Management System!');
 });
 
+// Import order routes
+// Use order routes
+server.use('/orders', orderRouter);
 // Use category routes
 server.use('/categories', categoryRouter);
 // Import user routes

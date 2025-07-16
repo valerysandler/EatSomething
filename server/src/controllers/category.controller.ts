@@ -1,6 +1,6 @@
 // Category controller for handling category-related requests
 import { Request, Response } from 'express';
-import { Category } from '../models/categoty.model';
+import { Category } from '../interfaces/categoty.model';
 import { getCategories, createCategory, updateCategory, deleteCategory } from '../services/category.service';
 
 // Get all categories

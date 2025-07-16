@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import { MenuCategory } from "../models/menuCategort.model";
+import { MenuCategory } from "../interfaces/menuCategort.model";
 
 // PostgreSQL connection pool
 const pool = new Pool({

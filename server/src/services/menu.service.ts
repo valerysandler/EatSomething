@@ -1,5 +1,5 @@
 // Menu service
-import { Menu } from '../models/menu.model';
+import { Menu } from '../interfaces/product.model';
 import { Pool } from 'pg';
 
 // PostgreSQL connection pool

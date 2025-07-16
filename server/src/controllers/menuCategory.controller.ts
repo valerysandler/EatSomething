@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { MenuCategory } from "../models/menuCategort.model";
+import { MenuCategory } from "../interfaces/menuCategort.model";
 import { getMenuCategories, createMenuCategory, updateMenuCategory, deleteMenuCategory } from "../services/menuCategory.service";
 // Get all menu categories
 export const getAllMenuCategories = async (req: Request, res: Response): Promise<void> => {

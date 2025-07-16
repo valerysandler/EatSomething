@@ -1,6 +1,6 @@
 // Controller for user-related operations
 import { Request, Response } from 'express';
-import { User } from '../models/user.model';
+import { User } from '../interfaces/user.model';
 import { getUsers, createUser, updateUser, deleteUser } from '../services/user.service';
 import { Role } from '../types/role';
 // Get all users

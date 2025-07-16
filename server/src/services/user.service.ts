@@ -1,5 +1,5 @@
 // User service CRUD operations
-import { User } from '../models/user.model';
+import { User } from '../interfaces/user.model';
 import { Pool } from 'pg';
 import { Role } from '../types/role';
 
