@@ -46,9 +46,7 @@ GET	/users	Get all users
 
 POST /users body
 
-json
-Copy
-Edit
+
 {
   "email": "john@example.com",
   "password": "123456",
@@ -67,10 +65,6 @@ POST	/menu	Create new menu item
 PUT	/menu/:id	Update menu item
 
 POST /menu body
-
-json
-Copy
-Edit
 {
   "menuCategoryId": 2,
   "name": "Shakshuka",
@@ -85,10 +79,6 @@ GET	/orders	Get all orders
 POST	/orders	Create a new order
 
 POST /orders body
-
-json
-Copy
-Edit
 {
   "items": [
     {
@@ -108,10 +98,7 @@ Edit
   "status": "pending"
 }
 📁 Project Structure
-bash
-Copy
-Edit
-.
+
 ├── src
 │   ├── config          # DB config
 │   ├── controllers     # Route logic
