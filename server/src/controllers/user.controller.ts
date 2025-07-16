@@ -8,6 +8,10 @@ import { Role } from '../types/role';
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
     try {
         const users: User[] = await getUsers();
+        if (users.length === 0) {
+            res.status(404).json({ message: 'No users found' });
+            return;
+        }
         res.status(200).json(users);
     } catch (error: any) {
         res.status(500).json({ message: 'Error fetching users', error: error.message });
@@ -18,6 +22,7 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
 export const addUser = async (req: Request, res: Response): Promise<void> => {
     try {
         const newUser: User = req.body;
+        console.log('Received new user data:', newUser);
         newUser.isActive = newUser.isActive ?? true; // Default to active if not provided
         newUser.role = newUser.role ?? 'user'; // Default role to 'user'    
         // Ensure the role is valid

@@ -23,10 +23,16 @@ export const createUser = async (user: User): Promise<User> => {
     }
     // Insert user into the database              
     const result = await pool.query(`
-  INSERT INTO users (email, password, role, is_active)
-  VALUES ($1, $2, $3, $4)
-`, [user.email, user.password, user.role, user.isActive]);
-
+  INSERT INTO users (name, email, password, created_at, updated_at, phone_number, is_active, role)
+  VALUES ($1, $2, $3, NOW(), NOW(), $4, $5, $6)
+`, [
+        user.name,
+        user.email,
+        user.password,
+        user.phone_number,
+        user.isActive,
+        user.role
+    ]);
     return result.rows[0];
 }
 
@@ -35,7 +41,7 @@ export const createUser = async (user: User): Promise<User> => {
 export const updateUser = async (id: number, user: User): Promise<User | null> => {
     const result = await pool.query(
         'UPDATE users SET email = $1, password = $2, phoneNumber = $3, isActive = $4, role = $5 WHERE id = $6 RETURNING *',
-        [user.email, user.password, user.phoneNumber, user.isActive, user.role, id]
+        [user.email, user.password, user.phone_number, user.isActive, user.role, id]
     );
     return result.rows.length > 0 ? result.rows[0] : null;
 }
