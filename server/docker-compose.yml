@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: npm run dev # если используешь nodemon
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: mynewuser
+      POSTGRES_PASSWORD: 111111
+      POSTGRES_DB: cafe
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
